@@ -8,53 +8,62 @@ body {
 	background-size: cover;
 	background-position: center;
 }
-
-/* dark mode looking scrollbar */
+/* Flexbox layout to ensure proper spacing between header, messages, and input */
+.flex-1 {
+	flex-grow: 1;
+	height: 100%;
+	width: 100%;
+	
+  }
+  
+  /* Scrollable messages container */
+  .overflow-y-auto {
+	overflow-x: auto;
+	scroll-behavior: smooth; /* Ensure smooth scrolling */
+  }
+  /* Target the scrollbar track */
 ::-webkit-scrollbar {
+	width: 8px; /* Adjust the width as needed */
+  }
+  
+  /* Make the scrollbar track transparent */
+  ::-webkit-scrollbar-track {
+	background: transparent;
+  }
+  
+  /* Make the scrollbar thumb (the part you click and drag) semi-transparent */
+  ::-webkit-scrollbar-thumb {
+	background: rgba(0, 0, 0, 0.3); /* Adjust the color and opacity */
+	border-radius: 10px; /* Optional: Rounded corners for the thumb */
+  }
+  
+  /* Optional: On hover, make the scrollbar thumb more visible */
+  ::-webkit-scrollbar-thumb:hover {
+	background: rgba(0, 0, 0, 0.5); /* Adjust on hover */
+  }
+  
+  /* For Firefox */
+ /* ::-scrollbar-color: rgba(0, 0, 0, 0.3) transparent; */
+  /* Apply custom scrollbar styles to the messages container */
+.messages-container {
+	overflow-y: auto;
+  }
+  
+  /* Transparent scrollbar styles */
+  .messages-container::-webkit-scrollbar {
 	width: 8px;
-}
-
-::-webkit-scrollbar-track {
-	background: #555;
-}
-
-::-webkit-scrollbar-thumb {
-	background: #121212;
-	border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-	background: #242424;
-}
-
-
-/* SHAKE ANIMATION ON HORIZONTAL DIRECTION */
-.shake {
-	animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) 0.2s both;
-	transform: translate3d(0, 0, 0);
-	backface-visibility: hidden;
-	perspective: 1000px;
-}
-
-@keyframes shake {
-	10%,
-	90% {
-		transform: translate3d(-1px, 0, 0);
-	}
-
-	20%,
-	80% {
-		transform: translate3d(2px, 0, 0);
-	}
-
-	30%,
-	50%,
-	70% {
-		transform: translate3d(-4px, 0, 0);
-	}
-
-	40%,
-	60% {
-		transform: translate3d(4px, 0, 0);
-	}
-}
+  }
+  
+  .messages-container::-webkit-scrollbar-track {
+	background: transparent;
+  }
+  
+  .messages-container::-webkit-scrollbar-thumb {
+	background: rgba(0, 0, 0, 0.3);
+	border-radius: 10px;
+  }
+  
+  .messages-container::-webkit-scrollbar-thumb:hover {
+	background: rgba(0, 0, 0, 0.5);
+  }
+  
