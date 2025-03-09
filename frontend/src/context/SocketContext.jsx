@@ -15,7 +15,7 @@ export const SocketContextProvider = ({ children }) => {
 
 	useEffect(() =>{
 		if (authUser) {
-			const socket = io("https://chat-app-mern-stack-jf9b.onrender.com",{  // use render hosted link
+			const socket = io("http://localhost:8000",{  // use render hosted link
                 query: {
                     userId:authUser._id,
                 },

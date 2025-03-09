@@ -3,13 +3,12 @@
   "version": "1.0.0",
   "description": "- Facilitate communication and collaboration among users working remotely or in different locations.\r   - Allow for the exchange of messages.",
   "main": "server.js",
- 
   "scripts": {
     "server": "nodemon backend/server.js",
-    "start":"node backend/server.js",
-    "build":"npm install && npm install --prefix frontend && npm run build --prefix frontend"
+    "start": "node backend/server.js",
+    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend"
   },
-  "type":"module",
+  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -20,6 +19,7 @@
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.3.0",
+    "nodemon": "^3.1.9",
     "socket.io": "^4.7.5"
   }
 }

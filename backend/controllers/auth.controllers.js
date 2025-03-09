@@ -64,7 +64,7 @@ export const signup = async (req, res) => {
 
 
 export const login = async(req,res)=>{
-	res.send("User registered successfully");
+	// res.send("User registered successfully");
 
     try{
        const {username, password} = req.body;
@@ -91,7 +91,7 @@ export const login = async(req,res)=>{
 }
 
 export const logout = (req,res)=>{
-	res.send("User registered successfully");
+	// res.send("User registered successfully");
 
 	try {
 		res.cookie("jwt", "", { maxAge: 0 });
