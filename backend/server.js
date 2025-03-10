@@ -1,3 +1,4 @@
+import cors from "cors";
 import path from "path";
 import express from "express";
 import dotenv from "dotenv";
@@ -27,6 +28,13 @@ app.use(cookieParser());  // Handles cookies
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 app.use("/api/user", userRoutes)
+
+
+app.use(cors({
+  origin: ["http://localhost:3000", "https://chat-application-ed5w.onrender.com"],
+  credentials: true, // Important if using cookies
+}));
+
 
 
 app.use(express.static(path.join(__dirname, "/public")));
